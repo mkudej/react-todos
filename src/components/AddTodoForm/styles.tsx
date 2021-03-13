@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-const StyledAddTodoForm = styled.form`
+export const StyledAddTodoForm = styled.form`
   display: grid;
   grid-template-columns: 1fr 110px;
   column-gap: 25px;
   margin: 18px 0;
 `;
-
-const StyledFormInput = styled.input`
+export const StyledFormInput = styled.input`
   border: 1px solid #bdbdbd;
   padding: 0 12px;
   border-radius: 12px;
@@ -15,8 +14,7 @@ const StyledFormInput = styled.input`
   font-weight: 400;
   font-size: 14px;
 `;
-
-const StyledFormSubmitButton = styled.button`
+export const StyledFormSubmitButton = styled.button`
   height: 56px;
 
   color: #fff;
@@ -26,14 +24,3 @@ const StyledFormSubmitButton = styled.button`
 
   font-weight: 600;
 `;
-
-const AddTodoForm = () => {
-  return (
-    <StyledAddTodoForm>
-      <StyledFormInput placeholder="add details" type="text" />
-      <StyledFormSubmitButton>Add</StyledFormSubmitButton>
-    </StyledAddTodoForm>
-  );
-};
-
-export default AddTodoForm;
