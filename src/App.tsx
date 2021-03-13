@@ -1,6 +1,6 @@
 import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import Header from "./components/Header/Header";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 import TodosList from "./components/TodosList/TodosList";
 
 function App() {

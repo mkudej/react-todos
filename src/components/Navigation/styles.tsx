@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
-const StyledNavigation = styled.nav`
+export const StyledNavigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-around;
 
   border-bottom: 1px solid #bdbdbd;
 `;
-
-const StyledNavigationButton = styled.button`
+export const StyledNavigationButton = styled.button`
   position: relative;
   padding: 18px 35px;
 
@@ -29,15 +28,3 @@ const StyledNavigationButton = styled.button`
     content: "";
   }
 `;
-
-const Navigation = () => {
-  return (
-    <StyledNavigation>
-      <StyledNavigationButton className="active">All</StyledNavigationButton>
-      <StyledNavigationButton>Active</StyledNavigationButton>
-      <StyledNavigationButton>Completed</StyledNavigationButton>
-    </StyledNavigation>
-  );
-};
-
-export default Navigation;
