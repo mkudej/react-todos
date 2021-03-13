@@ -6,8 +6,8 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
   }
 
-  .wrapper {
-    max-width: 1255px;
+  .todos-app {
+    max-width: 600px;
     margin: 0 auto;
   }
 
