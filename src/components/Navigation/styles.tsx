@@ -7,7 +7,7 @@ export const StyledNavigation = styled.nav`
 
   border-bottom: 1px solid #bdbdbd;
 `;
-export const StyledNavigationButton = styled.button`
+export const NavigationButton = styled.button`
   position: relative;
   padding: 18px 35px;
 

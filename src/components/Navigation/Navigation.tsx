@@ -1,11 +1,11 @@
-import { StyledNavigation, StyledNavigationButton } from "./styles";
+import { StyledNavigation, NavigationButton } from "./styles";
 
 const Navigation = () => {
   return (
     <StyledNavigation>
-      <StyledNavigationButton className="active">All</StyledNavigationButton>
-      <StyledNavigationButton>Active</StyledNavigationButton>
-      <StyledNavigationButton>Completed</StyledNavigationButton>
+      <NavigationButton className="active">All</NavigationButton>
+      <NavigationButton>Active</NavigationButton>
+      <NavigationButton>Completed</NavigationButton>
     </StyledNavigation>
   );
 };
