@@ -6,7 +6,7 @@ import TodosList from "./components/TodosList/TodosList";
 function App() {
   return (
     <div className="todos-app">
-      <Header />
+      <Header>#todo</Header>
       <Navigation />
       <AddTodoForm />
       <TodosList />
