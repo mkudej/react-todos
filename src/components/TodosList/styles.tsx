@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TodoListItem = styled.li`
+export const TodoListItem = styled.li`
   display: grid;
   grid-template-columns: 24px 1fr;
   grid-gap: 10px;
@@ -27,22 +27,8 @@ const TodoListItem = styled.li`
     content: "";
   }
 `;
-
-const StyledTodosList = styled.ul`
+export const StyledTodosList = styled.ul`
   list-style-type: none;
   padding: 0;
   margin: 0;
 `;
-
-const TodosList = () => {
-  return (
-    <StyledTodosList>
-      <TodoListItem>Item #1</TodoListItem>
-      <TodoListItem>Item #2</TodoListItem>
-      <TodoListItem>Item #3</TodoListItem>
-      <TodoListItem>Item #4</TodoListItem>
-    </StyledTodosList>
-  );
-};
-
-export default TodosList;
