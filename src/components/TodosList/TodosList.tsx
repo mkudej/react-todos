@@ -1,12 +1,16 @@
+import { Todo } from "../../interfaces/Todo";
 import { StyledTodosList, TodoListItem } from "./styles";
 
-const TodosList = () => {
+interface TodosListProps {
+  todos: Todo[];
+}
+
+const TodosList = ({ todos }: TodosListProps) => {
   return (
     <StyledTodosList>
-      <TodoListItem>Item #1</TodoListItem>
-      <TodoListItem>Item #2</TodoListItem>
-      <TodoListItem>Item #3</TodoListItem>
-      <TodoListItem>Item #4</TodoListItem>
+      {todos.map((todo: Todo) => (
+        <TodoListItem key={todo.id}>{todo.title}</TodoListItem>
+      ))}
     </StyledTodosList>
   );
 };
