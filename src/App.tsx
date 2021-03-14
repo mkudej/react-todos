@@ -12,6 +12,7 @@ interface AppProps {
 
 function App({ todoService }: AppProps) {
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [activeFilter, setActiveFilter] = useState<Filter> 
 
   const addTodo = (title: string) => {
     todoService.add(title);
