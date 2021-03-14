@@ -3,11 +3,12 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import GlobalStyles from "./GlobalStyles";
 import reportWebVitals from "./reportWebVitals";
+import { TodoService } from "./services/Todo.service";
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <App />
+    <App todoService={new TodoService()} />
   </React.StrictMode>,
   document.getElementById("root")
 );
