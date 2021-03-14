@@ -26,6 +26,19 @@ export const TodoListItem = styled.li`
 
     content: "";
   }
+
+  &.completed {
+    &:before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #2f80ed;
+      color: #fff;
+
+      content: "✓";
+    }
+  }
 `;
 export const StyledTodosList = styled.ul`
   list-style-type: none;

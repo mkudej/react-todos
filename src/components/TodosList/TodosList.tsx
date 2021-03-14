@@ -3,13 +3,21 @@ import { StyledTodosList, TodoListItem } from "./styles";
 
 interface TodosListProps {
   todos: Todo[];
+  deleteTodo: (id: number) => void;
+  toggleTodoStatus: (id: number) => void;
 }
 
-const TodosList = ({ todos }: TodosListProps) => {
+const TodosList = ({ todos, toggleTodoStatus }: TodosListProps) => {
   return (
     <StyledTodosList>
       {todos.map((todo: Todo) => (
-        <TodoListItem key={todo.id}>{todo.title}</TodoListItem>
+        <TodoListItem
+          className={todo.completed ? "completed" : ""}
+          onClick={() => toggleTodoStatus(todo.id)}
+          key={todo.id}
+        >
+          {todo.title}
+        </TodoListItem>
       ))}
     </StyledTodosList>
   );
