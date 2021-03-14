@@ -1,4 +1,5 @@
 import { Todo } from "../interfaces/Todo";
+import { TodoStatus } from "../interfaces/TodoStatus";
 
 export class TodoService {
     private todos: Todo[] = [];
@@ -12,7 +13,7 @@ export class TodoService {
         this.todos = [...this.todos, {
             id,
             title,
-            completed: false
+            completed: TodoStatus.NOT_COMPLETED
         }];
     }
 
@@ -23,7 +24,8 @@ export class TodoService {
     public toggleTodoStatus(id: number) {
         this.todos = this.todos.map((todo) => {
             if(todo.id === id){
-                return {...todo, completed: !todo.completed};
+                const status = todo.completed ? TodoStatus.NOT_COMPLETED : TodoStatus.COMPLETED;
+                return {...todo, completed: status};
             }
             return todo;
         });
