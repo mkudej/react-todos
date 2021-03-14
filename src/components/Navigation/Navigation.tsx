@@ -1,11 +1,37 @@
+import { Filter } from "../../interfaces/Filter";
 import { StyledNavigation, NavigationButton } from "./styles";
 
-const Navigation = () => {
+interface NavigationProps {
+  activeFilter: Filter;
+  setActiveFilter: any;
+}
+
+const filters = [
+  {
+    title: "All",
+    type: Filter.ALL,
+  },
+  {
+    title: "Active",
+    type: Filter.NOT_COMPLETED,
+  },
+  {
+    title: "Completed",
+    type: Filter.COMPLETED,
+  },
+];
+
+const Navigation = ({ activeFilter, setActiveFilter }: NavigationProps) => {
   return (
     <StyledNavigation>
-      <NavigationButton className="active">All</NavigationButton>
-      <NavigationButton>Active</NavigationButton>
-      <NavigationButton>Completed</NavigationButton>
+      {filters.map((filter) => (
+        <NavigationButton
+          onClick={() => setActiveFilter(filter.type)}
+          className={filter.type === activeFilter ? "active" : ""}
+        >
+          {filter.title}
+        </NavigationButton>
+      ))}
     </StyledNavigation>
   );
 };

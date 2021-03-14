@@ -3,6 +3,7 @@ import AddTodoForm from "./components/AddTodoForm/AddTodoForm";
 import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
 import TodosList from "./components/TodosList/TodosList";
+import { Filter } from "./interfaces/Filter";
 import { Todo } from "./interfaces/Todo";
 import { TodoService } from "./services/Todo.service";
 
@@ -12,7 +13,7 @@ interface AppProps {
 
 function App({ todoService }: AppProps) {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [activeFilter, setActiveFilter] = useState<Filter> 
+  const [activeFilter, setActiveFilter] = useState<Filter>(Filter.ALL);
 
   const addTodo = (title: string) => {
     todoService.add(title);
@@ -32,7 +33,10 @@ function App({ todoService }: AppProps) {
   return (
     <div className="todos-app">
       <Header>#todo</Header>
-      <Navigation />
+      <Navigation
+        activeFilter={activeFilter}
+        setActiveFilter={setActiveFilter}
+      />
       <AddTodoForm submitTodoForm={addTodo} />
       <TodosList
         deleteTodo={deleteTodo}
