@@ -13,7 +13,7 @@ export class TodoService {
         this.todos = [...this.todos, {
             id,
             title,
-            completed: TodoStatus.NOT_COMPLETED
+            status: TodoStatus.NOT_COMPLETED
         }];
     }
 
@@ -24,8 +24,8 @@ export class TodoService {
     public toggleTodoStatus(id: number) {
         this.todos = this.todos.map((todo) => {
             if(todo.id === id){
-                const status = todo.completed ? TodoStatus.NOT_COMPLETED : TodoStatus.COMPLETED;
-                return {...todo, completed: status};
+                const status = todo.status === TodoStatus.COMPLETED ? TodoStatus.NOT_COMPLETED : TodoStatus.COMPLETED;
+                return {...todo, status};
             }
             return todo;
         });
